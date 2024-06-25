@@ -34,11 +34,16 @@ WHERE pagetitle LIKE '%Office%';
 
 
 
-Question 4: 
+Question 4: Find each unique product viewed by each visitor 
 
 SQL Queries:
+SELECT DISTINCT (fullvisitorid) AS unique_visitor, 
+	(SELECT DISTINCT (v2productname)) AS unique_prod
+FROM all_sessions als
+GROUP BY als.v2productname,als.fullvisitorid 
 
-Answer:
+
+
 
 
 
