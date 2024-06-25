@@ -1,8 +1,14 @@
-Question 1: 
+Question 1: Find duplicate entries for visitors in table all_sessions.
 
-SQL Queries:
 
-Answer: 
+SQL Queries: SELECT fullvisitorid,
+COUNT (fullvisitorid)
+FROM all_sessions als
+GROUP BY fullvisitorid
+HAVING COUNT (fullvisitorid) > 1
+ORDER BY COUNT DESC
+
+
 
 
 
