@@ -47,8 +47,14 @@ GROUP BY als.v2productname,als.fullvisitorid
 
 
 
-Question 5: 
+Question 5: Compute the percentage of visitors to the site that actually makes a purchase
 
 SQL Queries:
+SELECT fullvisitorid, COUNT (fullvisitorid) AS fullvisitorid_count,
+COUNT(*) * 100.0/ SUM(COUNT(*)) OVER () AS fullvisitorid_percent
+FROM all_sessions als
+	WHERE als.productprice > 0
+GROUP BY fullvisitorid
+ORDER BY fullvisitorid ASC
 
-Answer:
+
