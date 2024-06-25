@@ -15,3 +15,8 @@ QA Process: In the Excel files we start cleaning our data as follows
 -- In the home page click find and select, click on go to special or just select the cells to be updated and press f5. It has an option to go to empty cells and fill in values like 0 or just for data exploration.
 
 Describe your QA process and include the SQL queries used to execute it.
+
+#SELECT COUNT((DISTINCT(city))
+FROM all_sessions_view
+-- It gives unique values in city column in the all_sessions table (all_sessions_view is a view created with relevant columns)
+
