@@ -12,11 +12,12 @@ ORDER BY COUNT DESC
 
 
 
-Question 2: 
+Question 2: Find the total unique visitors in all_sessions table
 
-SQL Queries:
+SQL Queries:SELECT COUNT (DISTINCT fullvisitorid) as unique_visitors
+from all_sessions
 
-Answer:
+
 
 
 
