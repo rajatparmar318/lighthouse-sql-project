@@ -11,3 +11,32 @@ Unique Constraints: some fields must be unique. For customerid should always be 
 
 Queries:
 Below, provide the SQL queries you used to clean your data.
+
+UPDATE all_sessions
+SET ecommerceaction_option='online'
+WHERE ecommerceaction_option IS NULL
+--similarly we can add data into columns having no information
+
+DELETE FROM all_sessions_view
+WHERE fullvisitorid NOT IN 
+(SELECT MIN(fullvisitorid)
+	FROM all_sessions_view
+	GROUP BY city,country)
+ --deletes duplicate data in different rows
+
+ UPDATE all_sessions
+SET date = DATE_FORMAT(date, '%Y-%m-%d');
+--standardizes date
+
+SELECT *
+FROM all_sessions
+WHERE productprice <= 10000;
+--handles outliers
+
+UPDATE analytics
+SET unit_price = REGEXP_REPLACE(unit_price, '[^0-9]', '');
+--removing non numeric values from a column
+
+UPDATE all_sessions
+SET v2productname = LOWER(v2productname);
+--standardize text case
