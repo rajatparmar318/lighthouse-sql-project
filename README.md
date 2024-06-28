@@ -56,8 +56,7 @@ GROUP BY p.name,als.city,als.country
 ORDER BY products_ordered DESC;
 
 ## Challenges 
-Time constraint 
-Data cluttered
+Data was cluttered and it was a challenge to look out for data required to answer questions.
 
 ## Future Goals
 To clean data more efficiently with merging queries and more distinct functions to provide optimal solution
