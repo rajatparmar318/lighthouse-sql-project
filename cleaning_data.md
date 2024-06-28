@@ -41,6 +41,9 @@ UPDATE all_sessions
 SET v2productname = LOWER(v2productname);
 --standardize text case
 
-select productprice/1000 as new_unit_cost
-from all_sessions
+
+SELECT productprice/1000 AS new_unit_cost
+FROM all_sessions
+
+
 --divides the column
