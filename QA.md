@@ -18,22 +18,37 @@ Describe your QA process and include the SQL queries used to execute it.
 
 #SELECT COUNT((DISTINCT(city))
 FROM all_sessions_view
+
+
 -- It gives unique values in city column in the all_sessions table (all_sessions_view is a view created with relevant columns)
+
+
 
 SELECT * FROM all_sessions_view
 WHERE city LIKE 'not available in demo dataset'
+
+
 -- It gives all the visitors in the view all_sessions_view with having city specified as 'not available in demo dataset'
+
 
 SELECT column_name, data_type, is_nullable
 FROM information_schema.columns
 WHERE table_name = 'all_sessions';
+
+
 --Get column data types and nullability for the employees table
+
+
 
 SELECT fullvisitorid, COUNT(*)
 FROM all_sessions
 GROUP BY fullvisitorid
 HAVING COUNT(*) > 1;
+
+
 --checking for duplicate data in all_sessions table for fullvisitorid column
+
+
 
 UPDATE all_sessions_view
 SET country = CASE
@@ -41,6 +56,9 @@ SET country = CASE
     WHEN country = 'UK' THEN 'United Kingdom'
     ELSE country
     END;
+
+
+
 --standardizing the country names in view all_sessions_view.
 
 
