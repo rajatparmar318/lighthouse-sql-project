@@ -40,3 +40,7 @@ SET unit_price = REGEXP_REPLACE(unit_price, '[^0-9]', '');
 UPDATE all_sessions
 SET v2productname = LOWER(v2productname);
 --standardize text case
+
+select productprice/1000 as new_unit_cost
+from all_sessions
+--divides the column
