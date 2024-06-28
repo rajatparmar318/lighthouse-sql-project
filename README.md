@@ -20,6 +20,9 @@ JOIN sales_by_sku sbs
 ON als.productsku=sbs.products_sku
 GROUP BY als.city,als.country
 ORDER BY total_revenue DESC;
+
+
+
 -- uses alias als for all_sessions and sbs for sales_by_sku
 uses a join with primary key being productsku
 uses the sum of the product of column productprice in all_sessions and total_ordered in sales_by_sku to create a new column total_revenue.
@@ -32,6 +35,9 @@ JOIN sales_by_sku sbs
 ON als.productsku=sbs.products_sku
 GROUP BY als.country,als.city
 ORDER BY avg_prod DESC
+
+
+
 --used a join to calculate average products ordered by visitors in different city and country
 
 
@@ -40,6 +46,9 @@ FROM all_sessions als
 WHERE als.v2productcategory LIKE '%Home/Apparel%'
 GROUP BY als.city,als.country
 ORDER BY product_category
+
+
+
 --to see a specific pattern we can use LIKE keyword to search for specific strings in a column. Here I selected Home/Apparel which can be changed accordingly.
 
 
